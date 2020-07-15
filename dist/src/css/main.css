@@ -1,0 +1,131 @@
+html {
+  font: 1.1em/1.4 var(--poppins);
+}
+
+.wrapper {
+  margin: 0;
+  padding: 1rem;
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    margin: 0 15%;
+  }
+}
+
+.wrapper .header nav div div ul {
+  list-style: none;
+}
+
+.wrapper .header nav div div ul li a {
+  display: block;
+  border: #bfbfbf;
+  color: #9e9aa7;
+  font-family: var(--poppins);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+
+.wrapper .header nav div div ul li a:hover {
+  border: 1px solid black;
+}
+
+.wrapper .footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  background-color: #3b3054;
+  color: white;
+}
+
+@media (min-width: 1440px) {
+  .wrapper .footer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1.5fr 1fr;
+        grid-template-columns: 1fr 1.5fr 1fr;
+  }
+}
+
+.wrapper .footer .part1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10% 5%;
+  padding-left: 2rem;
+}
+
+@media (min-width: 1440px) {
+  .wrapper .footer .part1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 5%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.wrapper .footer .part2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  text-align: center;
+  padding-right: 2rem;
+}
+
+@media (min-width: 1440px) {
+  .wrapper .footer .part2 {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding-top: 7%;
+  }
+}
+
+.wrapper .footer .part2 ul {
+  display: -ms-grid;
+  display: grid;
+  list-style: none;
+  font-family: "Poppins";
+}
+
+.wrapper .footer .part2 ul span {
+  margin-bottom: 0.8rem;
+}
+
+.wrapper .footer .part2 ul li {
+  color: grey;
+}
+
+.wrapper .footer .part3 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 1440px) {
+  .wrapper .footer .part3 div {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2rem 2rem 2rem 2rem;
+        grid-template-columns: 2rem 2rem 2rem 2rem;
+    padding-top: 7%;
+    padding-right: 25%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

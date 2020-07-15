@@ -1,7 +1,12 @@
 import React from "react";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-function App() {
-  return <div>URL SHORTENING API PAGE</div>;
-}
+const App = () => (
+  <div className="wrapper">
+    <Header />
+    <Footer />
+  </div>
+);
 
 export default App;
