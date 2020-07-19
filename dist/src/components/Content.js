@@ -2,7 +2,7 @@ import React from "react";
 const handleChange = () => {
   getData();
 };
-//const handleClick = () => console.log("Reachedddddddd");
+const handleClick = () => console.log("Reachedddddddd");
 const URL = "https://rel.ink/api/links/";
 
 const getData = async () => {
