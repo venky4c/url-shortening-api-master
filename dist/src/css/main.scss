@@ -35,11 +35,11 @@ $mobile: 375px;
   }
 }
 
-// @mixin mobile {
-//   @media (min-width: #{$mobile}) {
-//     @content;
-//   }
-// }
+@mixin mobile {
+  @media (min-width: #{$mobile}) {
+    @content;
+  }
+}
 
 html {
   font: 1.1em/1.4 var(--poppins);
@@ -51,41 +51,52 @@ html {
   padding: 1rem;
 
   @include desktop {
-    margin: 0 15%;
+    margin: 0 10.95%;
     // margin-top: 1rem;
     // padding: 2rem 3rem;
   }
 
   .header {
     //max-width: 100%;
+    margin: 0 10%;
     @include desktop {
     }
     nav {
       div {
+        //container
+        display: inline;
+
+        @include desktop {
+          border: 1px solid blue;
+          grid-template-columns: auto auto auto;
+        }
         img {
           //   @include desktop {
-          //     margin-right: 20em;
-          //     margin-left: 7em;
+
           //   }
         }
 
-        // button {
-        //   justify-content: end;
-        // }
+        button {
+          justify-content: end;
+        }
 
         div {
+          //collaps navbar-collapse
+
           ul {
             list-style: none;
+            display: inline-flex;
 
+            @include desktop {
+              // grid-template-columns: auto auto auto;
+            }
             li a {
-              display: block;
-              //float: left;
+              //   display: block;
+              //   float: right;
               border: color(--gray);
               color: color(--grayishViolet);
               font-family: var(--poppins);
               font-weight: bold;
-              text-transform: uppercase;
-              letter-spacing: 0.125rem;
             }
 
             li a:hover {
@@ -96,11 +107,225 @@ html {
       }
     }
   } // header ends
+  //----------------------   header style ends     ----------------------------
+
+  //----------------------   Content style begins    --------------------------
+  .content {
+    .part1 {
+      display: grid;
+      //border: 1px dotted black;
+      margin: 0 10%;
+      font-family: font(--poppins);
+
+      @include desktop {
+        grid-template-columns: 25rem 13rem;
+        grid-template-rows: auto 1fr;
+      }
+      button {
+        color: white;
+        background-color: color(--cyan);
+        border-radius: 10%;
+        text-align: center;
+        font-size: medium;
+      }
+      .main {
+        display: grid;
+        margin: 20% 10%;
+        @include desktop {
+          grid-area: 1 / 1 / 2 / 2;
+          align-content: left;
+          align-items: center;
+        }
+        h1 {
+          font-size: xx-large;
+        }
+        p {
+          font-weight: 500;
+          color: color(--grayishViolet);
+        }
+      }
+      .work-image {
+        //display: grid;
+
+        @include desktop {
+          grid-area: 1 / 2 / 2 / 3;
+        }
+      }
+      .shorten {
+        display: grid;
+        justify-content: center;
+        max-width: 100%;
+        background-repeat: no-repeat;
+        background-color: color(--darkViolet);
+        height: 9rem;
+        background-image: url("../assets/images/icons/bg-shorten-mobile.svg");
+
+        @include desktop {
+          grid-area: 2 / 1 / 3 / 3;
+          background-image: url("../assets/images/icons/bg-shorten-desktop.svg");
+          align-items: center;
+        }
+      }
+    }
+
+    .part2 {
+      margin: 0 10%;
+      background-color: var(--red);
+      border: 1px solid red;
+      @include desktop {
+      }
+
+      .adv-stats {
+        display: grid;
+        justify-items: center;
+        font-family: "Poppins";
+
+        > p {
+          margin: 0 20rem;
+          color: color(--grayishViolet);
+          text-align: center;
+        }
+        .paras {
+          display: grid;
+
+          @include desktop {
+            max-width: 70%;
+            grid-template-columns: 19rem 19rem 19rem;
+            grid-template-rows: 9.5rem 9.5rem 9.5rem 9.5rem;
+            column-gap: 2rem;
+            padding: 2rem 0;
+            justify-content: center;
+          }
+          div {
+            //part2a to 2c
+            display: grid;
+            padding: 0 1rem;
+
+            @include desktop {
+              display: inline;
+            }
+            p {
+              color: color(--grayishViolet);
+              font-size: small;
+
+              text-align: left;
+            }
+          }
+          .part2a {
+            @include desktop {
+              display: grid;
+              grid-row: 1 / 3;
+              grid-column: 1/2;
+            }
+            svg {
+              background-color: color(--veryDarkViolet);
+              width: 3rem;
+              height: 3rem;
+              border-radius: 50%;
+              padding: 0.5rem 0rem 0.1rem 0.5rem;
+            }
+            div {
+              box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+            }
+          }
+          .part2b {
+            @include desktop {
+              display: grid;
+              grid-row: 2 / 4;
+              grid-column: 2/3;
+            }
+            svg {
+              background-color: color(--veryDarkViolet);
+              width: 3rem;
+              height: 3rem;
+              border-radius: 50%;
+              padding: 0.5rem 0rem 0.1rem 0.5rem;
+            }
+            div {
+              box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+            }
+          }
+          .part2c {
+            @include desktop {
+              display: grid;
+              grid-row: 3 / 5;
+              grid-column: 3/4;
+            }
+            svg {
+              background-color: color(--veryDarkViolet);
+              width: 3rem;
+              height: 3rem;
+              border-radius: 50%;
+              padding: 0.5rem;
+            }
+            div {
+              box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+    }
+    .part3 {
+      display: grid;
+      @include desktop {
+        //justify-content: center;
+      }
+
+      .booster {
+        max-width: 100%;
+        background-repeat: no-repeat;
+        background-color: color(--darkViolet);
+        background-image: url("../assets/images/icons/bg-boost-mobile.svg");
+        height: 15em;
+        //position: relative;
+        background-size: cover;
+        //background-position: center;
+        z-index: -2;
+
+        @include desktop {
+          background-image: url("../assets/images/icons/bg-boost-desktop.svg");
+        }
+      }
+      .banner {
+        display: grid;
+        position: absolute;
+        place-content: center;
+
+        @include desktop {
+        }
+
+        h1 {
+          //left: 100%;
+          // margin: -20%;
+          color: white;
+          font-size: 2em;
+          //position: relative;
+          font-family: "Poppins";
+          //transform: translate(60%, -200%);
+
+          border: 1px solid yellow;
+        }
+        button {
+          border: 1px solid red;
+          font-family: "Poppins";
+          background: hsl(180, 66%, 49%);
+          color: white;
+        }
+      }
+    }
+  }
+
+  //----------------------   footer style ends      ---------------------------
+
+  //----------------------   footer style begins    ---------------------------
 
   .footer {
     display: grid;
     grid-template-rows: auto auto auto;
-    background-color: color(--darkViolet);
+    background-color: black;
     color: white;
 
     @include desktop {
@@ -109,6 +334,7 @@ html {
 
       //display: flex;
     }
+
     .part1 {
       display: flex;
       justify-content: center;

@@ -6,7 +6,7 @@ const Header = () => (
       <div class="container">
         <img
           className="title"
-          src={require("../images/icons/logo.svg")}
+          src={require("../assets/images/icons/logo.svg")}
           alt=""
         />
         <button
@@ -34,12 +34,11 @@ const Header = () => (
                 Resources
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#viewPlans">
-                Login
-              </a>
-            </li>
           </ul>
+          <div className="right-menu">
+            <span class="nav-item">Login</span>
+            <button className="signup-btn">Sign up</button>
+          </div>
         </div>
       </div>
     </nav>
