@@ -4,44 +4,35 @@ const handleChange = () => {
 };
 const handleClick = () => console.log("Reachedddddddd");
 const URL = "https://rel.ink/api/links/";
-
 const getData = async () => {
-  fetch(URL)
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  let response = await fetch(
+    URL
+    // {
+    // "method": "GET",
+    // "headers": {
+    //   "x-rapidapi-host":URL,
+    //   "x-rapidapi-key": "",
+    // }
+  );
+  let data = await response.json();
+  console.log(data);
+
+  // .catch((err) => {
+  //   console.log(err);
+  // });
 };
+
 const Content = () => (
   <div className="content">
-    <div className="part1">
-      <div className="main">
-        <h1 className="title">More than just shorter links</h1>
-        <p>
-          Build your brand’s recognition and get detailed insights on how your
-          links are performing.
-        </p>
-        <button className="get-started">Get Started</button>
-      </div>
-      <div className="work-image">
-        <img
-          src={require("../assets/images/icons/illustration-working.svg")}
-          alt=""
-        />
-      </div>
-      <div className="shorten">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Shorten a link here..."
-          onChange={handleChange}
-        />
-        <br />
-        <button onClick={handleClick}>Shorten It!</button>
-      </div>
+    <div className="shorten">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Shorten a link here..."
+        onChange={handleChange}
+      />
+      <button onClick={handleClick}>Shorten It!</button>
     </div>
 
     <section className="part2">
@@ -114,3 +105,13 @@ const Content = () => (
 );
 
 export default Content;
+
+// const getData = async () => {
+//   fetch(URL)
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };

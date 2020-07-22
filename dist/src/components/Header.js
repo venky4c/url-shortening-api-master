@@ -18,7 +18,7 @@ const Header = () => (
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar1">
-          <ul class="navbar-nav nav nav-fill w-100">
+          <ul class="navbar-nav nav w-100">
             <li class="nav-item">
               <a class="nav-link" href="#features">
                 Features
@@ -35,10 +35,10 @@ const Header = () => (
               </a>
             </li>
           </ul>
-          <div className="right-menu">
-            <span class="nav-item">Login</span>
-            <button className="signup-btn">Sign up</button>
-          </div>
+        </div>
+        <div className="right-menu">
+          <span class="nav-item">Login</span>
+          <button className="signup-btn">Sign up</button>
         </div>
       </div>
     </nav>
