@@ -1,40 +1,7 @@
 import React from "react";
-const handleChange = () => {
-  getData();
-};
-const handleClick = () => console.log("Reachedddddddd");
-const URL = "https://rel.ink/api/links/";
-const getData = async () => {
-  let response = await fetch(
-    URL
-    // {
-    // "method": "GET",
-    // "headers": {
-    //   "x-rapidapi-host":URL,
-    //   "x-rapidapi-key": "",
-    // }
-  );
-  let data = await response.json();
-  console.log(data);
-
-  // .catch((err) => {
-  //   console.log(err);
-  // });
-};
 
 const Content = () => (
   <div className="content">
-    <div className="shorten">
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="Shorten a link here..."
-        onChange={handleChange}
-      />
-      <button onClick={handleClick}>Shorten It!</button>
-    </div>
-
     <section className="part2">
       <div className="adv-stats">
         <h1>Advanced Statistics</h1>

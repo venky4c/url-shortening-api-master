@@ -1,5 +1,6 @@
 html {
   font: 1.1em/1.4 var(--poppins);
+  font-family: "Poppins";
 }
 
 .wrapper {
@@ -167,8 +168,12 @@ html {
   }
 }
 
-.wrapper .content .shorten {
-  margin: 2%;
+.wrapper .shorten-list {
+  background-color: #f8f9fa;
+}
+
+.wrapper .shorten-list .ui {
+  margin: 0 20%;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -184,10 +189,9 @@ html {
 }
 
 @media (min-width: 1440px) {
-  .wrapper .content .shorten {
+  .wrapper .shorten-list .ui {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
-    margin: 0 10%;
     background-image: url("../assets/images/icons/bg-shorten-desktop.svg");
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -195,7 +199,7 @@ html {
   }
 }
 
-.wrapper .content .shorten button {
+.wrapper .shorten-list .ui button {
   color: white;
   background-color: #2acfcf;
   border-radius: 1.5rem;
@@ -203,10 +207,33 @@ html {
   font-size: medium;
 }
 
+.wrapper .shorten-list .output {
+  margin: 0 20%;
+  display: -ms-grid;
+  display: grid;
+}
+
+.wrapper .shorten-list .output .shorten-card {
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  height: 2.5rem;
+  border-radius: 15%;
+  margin: 2% 0;
+  width: 100%;
+}
+
+@media (min-width: 1440px) {
+  .wrapper .shorten-list .output .shorten-card {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 .wrapper .content .part2 {
-  margin: 0 10%;
   background-color: #f8f9fa;
-  border: 1px solid red;
 }
 
 .wrapper .content .part2 .adv-stats {
@@ -262,9 +289,32 @@ html {
 }
 
 @media (min-width: 1440px) {
-  .wrapper .content .part2 .adv-stats .paras .part2a {
+  .wrapper .content .part2 .adv-stats .paras .part2a,
+  .wrapper .content .part2 .adv-stats .paras .part2b,
+  .wrapper .content .part2 .adv-stats .paras .part2c {
     display: -ms-grid;
     display: grid;
+  }
+}
+
+.wrapper .content .part2 .adv-stats .paras .part2a svg,
+.wrapper .content .part2 .adv-stats .paras .part2b svg,
+.wrapper .content .part2 .adv-stats .paras .part2c svg {
+  background-color: #232127;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.wrapper .content .part2 .adv-stats .paras .part2a div,
+.wrapper .content .part2 .adv-stats .paras .part2b div,
+.wrapper .content .part2 .adv-stats .paras .part2c div {
+  -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1440px) {
+  .wrapper .content .part2 .adv-stats .paras .part2a {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1 / 3;
@@ -275,22 +325,11 @@ html {
 }
 
 .wrapper .content .part2 .adv-stats .paras .part2a svg {
-  background-color: #232127;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
   padding: 0.5rem 0rem 0.1rem 0.5rem;
-}
-
-.wrapper .content .part2 .adv-stats .paras .part2a div {
-  -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 1440px) {
   .wrapper .content .part2 .adv-stats .paras .part2b {
-    display: -ms-grid;
-    display: grid;
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     grid-row: 2 / 4;
@@ -301,22 +340,11 @@ html {
 }
 
 .wrapper .content .part2 .adv-stats .paras .part2b svg {
-  background-color: #232127;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
   padding: 0.5rem 0rem 0.1rem 0.5rem;
-}
-
-.wrapper .content .part2 .adv-stats .paras .part2b div {
-  -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 1440px) {
   .wrapper .content .part2 .adv-stats .paras .part2c {
-    display: -ms-grid;
-    display: grid;
     -ms-grid-row: 3;
     -ms-grid-row-span: 2;
     grid-row: 3 / 5;
@@ -327,16 +355,7 @@ html {
 }
 
 .wrapper .content .part2 .adv-stats .paras .part2c svg {
-  background-color: #232127;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
   padding: 0.5rem;
-}
-
-.wrapper .content .part2 .adv-stats .paras .part2c div {
-  -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .wrapper .content .part3 {
@@ -364,21 +383,27 @@ html {
   display: -ms-grid;
   display: grid;
   position: absolute;
-  place-content: center;
 }
 
 .wrapper .content .part3 .banner h1 {
+  left: 128%;
+  margin: 15% 0;
   color: white;
   font-size: 2em;
+  position: relative;
   font-family: "Poppins";
-  border: 1px solid yellow;
 }
 
 .wrapper .content .part3 .banner button {
-  border: 1px solid red;
-  font-family: "Poppins";
-  background: #2acfcf;
+  margin: 0 25%;
+  padding: 2% 0;
+  position: relative;
+  left: 127%;
   color: white;
+  background-color: #2acfcf;
+  border-radius: 1.5rem;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 .wrapper .footer {
