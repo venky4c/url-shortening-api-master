@@ -18,14 +18,6 @@ const ShortenList = (props) => {
     });
     return response.json();
   }
-  // const handleClick = () => {
-  //   postData(URL, {
-  //     url: urlForShortening,
-  //   }).then((data) => {
-  //     //console.log(url);
-  //     console.log(data);
-  //   });
-  // };
 
   const handleChange = (e) => {
     const urlForShortening = e.target.value;
@@ -36,9 +28,9 @@ const ShortenList = (props) => {
       url: urlForShortening,
     }).then((data) => {
       const { hashid } = data;
-      console.log(baseUrl.concat(hashid));
-      setTinyUrl(baseUrl.concat(hashid));
-      //console.log(tinyUrl);
+      const tinyUrl = baseUrl.concat(hashid);
+      setTinyUrl(tinyUrl);
+      console.log(`tinyUrl is ${tinyUrl}`);
     });
   };
 
@@ -55,7 +47,7 @@ const ShortenList = (props) => {
         <button onClick={postData}>Shorten It!</button>
       </div>
       <div className="output">
-        <ShortenCard beforeShorten={urlForShortening} />
+        <ShortenCard beforeShorten={urlForShortening} tinyUrl={tinyUrl} />
       </div>
     </div>
   );
