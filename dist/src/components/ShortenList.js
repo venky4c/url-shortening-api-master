@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ShortenCard from "./ShortenCard";
 
 const ShortenList = (props) => {
-  const [urlForShortening, setUrlForShortening] = useState();
-  const [tinyUrl, setTinyUrl] = useState();
+  const [urlForShortening, setUrlForShortening] = useState([]);
+  const [tinyUrl, setTinyUrl] = useState([]);
+  const [shortenUrl, setShortenUrl] = useState({});
 
   const URL = "https://rel.ink/api/links/";
   const baseUrl = "https://rel.ink/";
@@ -24,6 +25,17 @@ const ShortenList = (props) => {
     if (urlForShortening === "") alert("Please enter URL for Shortening");
     setUrlForShortening(urlForShortening);
     console.log(urlForShortening);
+    // postData(URL, {
+    //   url: urlForShortening,
+    // }).then((data) => {
+    //   const { hashid } = data;
+    //   const tinyUrl = baseUrl.concat(hashid);
+    //   setTinyUrl(tinyUrl);
+    //   console.log(`tinyUrl is ${tinyUrl}`);
+    // });
+  };
+
+  const handleClick = () => {
     postData(URL, {
       url: urlForShortening,
     }).then((data) => {
@@ -44,7 +56,7 @@ const ShortenList = (props) => {
           placeholder="Shorten a link here..."
           onChange={handleChange}
         />
-        <button onClick={postData}>Shorten It!</button>
+        <button onClick={() => handleClick()}>Shorten It!</button>
       </div>
       <div className="output">
         <ShortenCard beforeShorten={urlForShortening} tinyUrl={tinyUrl} />
