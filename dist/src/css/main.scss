@@ -1,14 +1,16 @@
 $colors: (
-  //### Primary
-    --cyan: hsl(180, 66%, 49%),
-  --darkViolet: hsl(257, 27%, 26%),
-  //### Secondary
-    --red: hsl(0, 87%, 67%),
-  //### Neutral
-    --gray: hsl(0, 0%, 75%),
-  --grayishViolet: hsl(257, 7%, 63%),
-  --veryDarkBlue: hsl(255, 11%, 22%),
-  --veryDarkViolet: hsl(260, 8%, 14%)
+  --darkBlue: hsl(209, 23%, 22%),
+  --veryDarkBlue: hsl(207, 26%, 17%),
+  --veryDarkBlueLightModeText: hsl(200, 15%, 8%),
+  --darkGrayLightModeInput: hsl(0, 0%, 52%),
+  --veryLightGrayLightModeBg: hsl(0, 0%, 98%),
+  --whiteDarkModeText&LightModeElements: hsl(0, 0%, 100%),
+  //   --darBlue (Dark Mode Elements): hsl(209, 23%, 22%)
+    // - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+    // - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+    // - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+    // - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+    // - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 );
 
 $fonts: (
@@ -16,8 +18,9 @@ $fonts: (
 );
 
 $fontSize: 18px;
-$fontText: 500;
-$fontHeading: 700;
+$fontText: 300;
+$fontHeading: 600;
+$fontHero: 800;
 
 @function color($color-name) {
   @return map-get($colors, $color-name);
@@ -42,379 +45,90 @@ $mobile: 375px;
 }
 
 html {
-  font: 1.1em/1.4 var(--poppins);
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
 }
 
 .wrapper {
-  margin: 0;
-  padding: 1rem;
+  margin: 0 auto;
 
   @include desktop {
-    margin: 0 10.95%;
+    margin: 0 20%;
   }
-  //--------------------------------- Header Styles begin -------------------------
+
   .header {
-    font-family: var(--poppins);
-    font-weight: bold;
-    font-size: small;
-    color: color(--gray);
-    @include desktop {
-      margin: 0 10% 0 0;
-      border: 1px solid red;
-    }
-
-    nav {
-      div {
-        img {
-          @include desktop {
-            margin: 0 1rem 0 4rem;
-            width: 7%;
-          }
-        }
-
-        div {
-          ul {
-            list-style: none;
-
-            li a {
-              display: block;
-              float: left;
-              border: var(--veryLightGray);
-            }
-
-            li a:hover {
-              border: 1px solid black;
-            }
-          }
-        }
-        .right-menu {
-          @include desktop {
-          }
-          button {
-            background: color(--cyan);
-            color: white;
-            border-radius: 1rem;
-          }
-        }
-      }
-    }
-  }
-  //----------------------   header style ends     ----------------------------
-
-  //----------------------   header bottom style starts     ----------------------------
-  .header-bottom {
     display: grid;
-    margin: 10% 2%;
-    font-family: font(--poppins);
-    grid-template-rows: auto auto;
 
     @include desktop {
-      grid-template-columns: 30rem 13rem;
-      margin: 0 10%;
+      grid-template-columns: auto auto;
+      justify-content: space-between;
     }
-    button {
-      color: white;
-      background-color: color(--cyan);
-      border-radius: 1.5rem;
-      text-align: center;
-      font-size: medium;
-      padding: 3% 0% 3% 0%;
-      @include desktop {
-        margin: 3% 50% 0 0;
-      }
+  } // end of Header
+
+  .content {
+    display: grid;
+
+    @include desktop {
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
     }
-    .main {
+  } //end of Content
+  //-------------------- COUNTRY-MINI-CARD STYLES -----------------
+  .country-mini-card {
+    display: grid;
+
+    @include desktop {
+      display: inline-block;
+      margin: 4%;
+      //grid-template-columns: auto auto;
+    }
+
+    div {
       display: grid;
-      grid-area: 2/1/3/2;
       place-content: center;
-      @include desktop {
-        margin: 15% 15% 15% 0%;
-        grid-area: 1 / 1 / 2 / 2;
-        align-items: center;
-        padding: 0 10% 0 0;
-      }
-      h1 {
-        font-size: 2rem;
-        @include desktop {
-          font-size: 3rem;
-          font-weight: bolder;
-        }
-      }
-      p {
-        font-size: 15px;
-        color: color(--grayishViolet);
-      }
-    }
-    .work-image {
-      display: grid;
-      grid-area: 1/1/2/2;
 
       @include desktop {
-        grid-area: 1 / 2 / 2 / 3;
-        align-items: center;
+        display: block;
+        //grid-template-rows: auto auto;
       }
       img {
-        display: inline;
-        align-items: center;
-        width: 350px;
-        height: 350px;
-
+        height: 4rem;
+        width: 8rem;
         @include desktop {
-          width: 550px;
-          height: 550px;
+          height: 6rem;
+          width: 12rem;
         }
+      }
+      label {
+        font-weight: bold;
       }
     }
   }
-  //----------------------   header bottom style ends     ----------------------------
-  //....................... ShortenList style begins -----------------------------
-  .shorten-list {
-    background-color: #f8f9fa;
 
-    .ui {
-      margin: 0 20%;
+  // -------------------- COUNTRY-CARD STYLES BEGIN ---------------------
+  .country-card {
+    img {
+      @include desktop {
+        height: 6rem;
+        width: 12rem;
+      }
+    }
+    div {
       display: grid;
-      justify-content: center;
-      max-width: 100%;
-      background-repeat: no-repeat;
-      background-color: color(--darkViolet);
-      height: 9rem;
-      background-image: url("../assets/images/icons/bg-shorten-mobile.svg");
-      grid-template-rows: auto auto;
+
       @include desktop {
         grid-template-columns: auto auto;
-        background-image: url("../assets/images/icons/bg-shorten-desktop.svg");
-        align-items: center;
       }
-      button {
-        color: white;
-        background-color: color(--cyan);
-        border-radius: 1.5rem;
-        text-align: center;
-        font-size: medium;
-      }
-    }
-    .output {
-      margin: 0 20%;
-      display: grid;
-      .shorten-card {
-        background-color: white;
+
+      .part1 {
         display: grid;
-        height: 2.5rem;
-        border-radius: 15%;
-        margin: 2% 0;
-        width: 100%;
 
         @include desktop {
-          grid-template-columns: auto auto auto;
-          justify-content: space-around;
+        }
+        label {
+          font-weight: bold;
         }
       }
     }
   }
-  // ---------------------  ShortenList style ends -------------------------
-  //----------------------   Content style begins    --------------------------
-  .content {
-    .part2 {
-      background-color: #f8f9fa;
-      @include desktop {
-      }
-
-      .adv-stats {
-        display: grid;
-        justify-items: center;
-        font-family: "Poppins";
-
-        > p {
-          margin: 0 20rem;
-          color: color(--grayishViolet);
-          text-align: center;
-        }
-        .paras {
-          display: grid;
-
-          @include desktop {
-            max-width: 70%;
-            grid-template-columns: 19rem 19rem 19rem;
-            grid-template-rows: 9.5rem 9.5rem 9.5rem 9.5rem;
-            column-gap: 2rem;
-            padding: 2rem 0;
-            justify-content: center;
-          }
-          div {
-            //part2a to 2c
-            display: grid;
-            padding: 0 1rem;
-
-            @include desktop {
-              display: inline;
-            }
-            p {
-              color: color(--grayishViolet);
-              font-size: small;
-
-              text-align: left;
-            }
-          }
-          .part2a,
-          .part2b,
-          .part2c {
-            @include desktop {
-              display: grid;
-            }
-            svg {
-              background-color: color(--veryDarkViolet);
-              width: 3rem;
-              height: 3rem;
-              border-radius: 50%;
-            }
-            div {
-              box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
-                0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-            }
-          }
-          .part2a {
-            @include desktop {
-              grid-row: 1 / 3;
-              grid-column: 1/2;
-            }
-            svg {
-              padding: 0.5rem 0rem 0.1rem 0.5rem;
-            }
-          }
-          .part2b {
-            @include desktop {
-              grid-row: 2 / 4;
-              grid-column: 2/3;
-            }
-            svg {
-              padding: 0.5rem 0rem 0.1rem 0.5rem;
-            }
-          }
-          .part2c {
-            @include desktop {
-              grid-row: 3 / 5;
-              grid-column: 3/4;
-            }
-            svg {
-              padding: 0.5rem;
-            }
-          }
-        }
-      }
-    }
-    .part3 {
-      display: grid;
-      @include desktop {
-      }
-
-      .booster {
-        max-width: 100%;
-        background-repeat: no-repeat;
-        background-color: color(--darkViolet);
-        background-image: url("../assets/images/icons/bg-boost-mobile.svg");
-        height: 15em;
-        background-size: cover;
-        z-index: -2;
-
-        @include desktop {
-          background-image: url("../assets/images/icons/bg-boost-desktop.svg");
-        }
-      }
-      .banner {
-        display: grid;
-        position: absolute;
-
-        @include desktop {
-        }
-
-        h1 {
-          left: 128%;
-          margin: 15% 0;
-          color: white;
-          font-size: 2em;
-          position: relative;
-          font-family: "Poppins";
-        }
-        button {
-          margin: 0 25%;
-          padding: 2% 0;
-          position: relative;
-          left: 127%;
-          color: white;
-          background-color: color(--cyan);
-          border-radius: 1.5rem;
-          text-align: center;
-          font-size: 1.2em;
-        }
-      }
-    }
-  }
-  //----------------------   footer style ends      ---------------------------
-
-  //----------------------   footer style begins    ---------------------------
-  .footer {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    background-color: black;
-    color: white;
-
-    @include desktop {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr 1fr;
-    }
-
-    .part1 {
-      display: flex;
-      justify-content: center;
-      margin: 10% 5%;
-      padding-left: 2rem;
-
-      @include desktop {
-        display: flex;
-        padding-top: 5%;
-        justify-content: space-evenly;
-      }
-    }
-    .part2 {
-      display: grid;
-      grid-template-rows: auto auto auto;
-      text-align: center;
-      padding-right: 2rem;
-
-      @include desktop {
-        grid-template-columns: auto auto auto;
-        align-items: start;
-        padding-top: 7%;
-      }
-
-      ul {
-        display: grid;
-        list-style: none;
-        font-family: "Poppins";
-        span {
-          margin-bottom: 0.8rem;
-        }
-        li {
-          color: grey;
-        }
-        @include desktop {
-        }
-      }
-    }
-    .part3 div {
-      display: flex;
-      justify-content: space-evenly;
-      margin-bottom: 2rem;
-      margin-top: 2rem;
-
-      @include desktop {
-        display: grid;
-        grid-template-columns: 2rem 2rem 2rem 2rem;
-        padding-top: 7%;
-        padding-right: 25%;
-      }
-    }
-  }
+  // end of Country-card
 } // end of wrapper

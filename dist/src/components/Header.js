@@ -2,46 +2,10 @@ import React from "react";
 
 const Header = () => (
   <div className="header">
-    <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-      <div class="container">
-        <img
-          className="title"
-          src={require("../assets/images/icons/logo.svg")}
-          alt=""
-        />
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar1"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar1">
-          <ul class="navbar-nav nav w-100">
-            <li class="nav-item">
-              <a class="nav-link" href="#features">
-                Features
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">
-                Pricing
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#resources">
-                Resources
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="right-menu">
-          <span class="nav-item">Login</span>
-          <button className="signup-btn">Sign up</button>
-        </div>
-      </div>
-    </nav>
+    <h1>Where in the world?</h1>
+    <p>
+      <button type="checkbox">DarkMode</button>
+    </p>
   </div>
 );
 
