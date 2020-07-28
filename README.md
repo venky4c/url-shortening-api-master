@@ -5,5 +5,5 @@ URL: https://practical-mcclintock-c961cd.netlify.app/
 
 This project was implemented in React using React hooks like useState, useEffect. Browser retains state after refresh. This feature uses localStorage functionality inherently available with all browsers.
 
-
-
+Thanks to Robin Wieruch for his wonderful article on implementing local storage 
+https://www.robinwieruch.de/local-storage-react
