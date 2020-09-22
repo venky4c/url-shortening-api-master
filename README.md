@@ -1,5 +1,9 @@
 # url-shortening-api-master
-Integrates with the rel.ink URL shortening API and lets you play with browser storage in this landing page project.
+[LIVE PROJECT LINK](https://practical-mcclintock-c961cd.netlify.app/)
+> Integrates with the rel.ink URL shortening API and lets you play with browser storage in this landing page project.
+
+
+![Alt Link](https://github.com/venky4c/url-shortening-api-master/blob/master/dist/src/url-shorten.gif)
 
 URL: https://practical-mcclintock-c961cd.netlify.app/
 
